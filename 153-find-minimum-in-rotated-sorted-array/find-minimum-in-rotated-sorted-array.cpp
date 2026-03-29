@@ -6,11 +6,7 @@ public:
         int high= n-1;
         int ans=INT_MAX;
 
-        if(nums[0] < nums[n-1]) 
-        {
-            ans= nums[0];
-            return ans;
-        }
+       
 
         while(low<=high)
         {

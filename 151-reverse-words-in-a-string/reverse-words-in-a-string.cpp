@@ -1,7 +1,31 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        vector<string> words;
+        string result;
+        int word_length=0;
+
+        for(int i =s.length()-1 ; i>=0 ; i--)
+        {
+            if(s[i] == ' ')
+            {
+                if(word_length>0)
+                {
+                    result = result + " " + s.substr(i+1,word_length);
+                    word_length=0;
+                }
+            }
+            else word_length++;
+        }
+
+        if(word_length>0) result = result + " " + s.substr(0,word_length);
+        return result.substr(1);
+
+        
+        
+        
+        
+        //----------------------brute solution with both space and time O(N)
+       /* vector<string> words;
         string word= "";
 
         //go char by char and when space comes store the word in list 
@@ -41,22 +65,9 @@ public:
 
         }
 
-        return result;
+        return result;*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //first approach both space and tie O(N)
+        //-------------------------first approach both space and tie O(N)
         /*int n = s.length();
 
         // 1️ Reverse entire string

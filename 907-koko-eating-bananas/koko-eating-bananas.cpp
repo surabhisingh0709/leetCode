@@ -5,7 +5,7 @@ public:
 
         int low =1;
         int high = *max_element(piles.begin() , piles.end());
-        int ans =-1;
+        ///int ans =-1;
 
         while(low<=high)
         {
@@ -19,7 +19,7 @@ public:
 
             if(total<=h) 
             {
-                ans =mid;
+                //ans =mid;
                 high = mid-1;
             }
             else 
@@ -28,7 +28,7 @@ public:
             }        
         }
         
-        return ans;
+        return low;
 
 
 

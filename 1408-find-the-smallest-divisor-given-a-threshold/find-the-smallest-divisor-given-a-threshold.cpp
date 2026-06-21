@@ -12,8 +12,7 @@ public:
             int total =0;
             for(int i =0 ; i< nums.size() ; i++)
             {
-                if(nums[i]%mid ==0) total += nums[i]/mid;
-                else total += nums[i]/mid +1;
+                total += ceil((double)nums[i]/mid);
             }
 
             if(total<= threshold)

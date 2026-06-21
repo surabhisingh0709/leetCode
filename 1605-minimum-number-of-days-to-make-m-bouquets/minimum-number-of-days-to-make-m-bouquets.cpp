@@ -26,7 +26,7 @@ public:
         int low = *min_element(bloomDay.begin() , bloomDay.end());
         int high = *max_element(bloomDay.begin() , bloomDay.end());
 
-        int ans =high;
+       // int ans =high;
         
         while(low<=high)
         {
@@ -35,12 +35,12 @@ public:
 
             if(num >= m) 
             {
-                ans = mid;
+                //ans = mid;
                 high= mid-1;
             }
             else low = mid+1;
         }
-        return ans;
+        return low;
         
     }
 };

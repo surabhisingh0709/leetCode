@@ -11,9 +11,25 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
+//Optimal tortoise hare method
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while(fast)
+        {
+           if (fast->next==nullptr) return slow;
+            slow = slow->next;
+            fast = fast->next->next;
+            
+
+        }
+        return slow;
+
+
+
         
 //brute method traversing whole LL and find length
-        ListNode* temp = head;
+        /*ListNode* temp = head;
         int len=0;
         if(head->next == nullptr) return head;
 
@@ -30,7 +46,7 @@ public:
             cnt++;
             temp = temp->next;
         }
-        return temp;
+        return temp;*/
 
     }
 };

@@ -11,15 +11,6 @@
 class Solution {
 
 public:
-    ListNode* deleteNode(ListNode*head,ListNode*prev)
-    {   
-        ListNode* temp = prev->next;
-        prev->next = prev->next->next;
-        temp->next=nullptr;
-        delete temp;
-        return head;
-    }
-public:
     ListNode* deleteDuplicates(ListNode* head) {
 
         ListNode* temp =head;
@@ -27,7 +18,9 @@ public:
         {
             if(temp->val == temp->next->val)
             {
-                deleteNode(head,temp);
+                ListNode* del = temp->next;
+                temp->next = del->next;
+                delete del;
             }
             else temp = temp->next;
         }

@@ -9,11 +9,11 @@ public:
             ans++;
         }
 
-        if((a.find(b)) < a.length()) return ans;
+        if((a.find(b)) != string::npos) return ans;
 
         a+=temp;
         ans++;
-        if((a.find(b)) < a.length()) return ans;
+        if((a.find(b)) != string::npos) return ans;
 
         return -1;
     }

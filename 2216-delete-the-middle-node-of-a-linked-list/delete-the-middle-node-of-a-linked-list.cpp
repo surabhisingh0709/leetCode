@@ -13,8 +13,26 @@ public:
     ListNode* deleteMiddle(ListNode* head) {
         if(head->next == nullptr) return nullptr;
 
-        //BRUTE
-        ListNode* temp = head;
+        //OPTIMAL
+        ListNode*slow=head;
+        ListNode*fast=head;
+        ListNode*prev=nullptr;
+        ListNode*del=nullptr;
+
+        while(fast!=nullptr && fast->next!=nullptr)
+        {
+            prev=slow;
+            slow=slow->next;
+            fast=fast->next->next;
+        }
+        del=prev->next;
+        prev->next=del->next;
+        delete del;
+        return head;
+
+
+        //BRUTE O(N+N/2)
+       /* ListNode* temp = head;
         int len=0;
         while(temp)
         {
@@ -35,8 +53,7 @@ public:
         del=temp->next;
         temp->next=del->next;
         delete del;
-        return head;
-
-        
+        return head;*/
+       
     }
 };

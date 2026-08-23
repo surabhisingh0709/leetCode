@@ -38,7 +38,7 @@ public:
                 if(nRow>=0 && nRow<m && nCol>=0 && nCol<n && ans[nRow][nCol]==-1)
                 {
                     q.push({{nRow,nCol},d+1});
-                    ans[nRow][nCol]=d;
+                    ans[nRow][nCol]=d+1;
                 }
             }
 

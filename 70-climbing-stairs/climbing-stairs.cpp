@@ -2,14 +2,18 @@ class Solution {
 public:
     int stairs(int i, vector<int>&dp)
     {
-        if(i<=1)return 1;
+        dp[0]=1;
+        dp[1]=1;
 
-        if(dp[i] !=-1) return dp[i];
+        //if(dp[i] !=-1) return dp[i];
+
+        for(int j =2 ; j<=i ; j++)
+        {
+            int left = dp[j-1];
+            int right = dp[j-2];
+            dp[j]=left+right;
+        }
         
-        int left = stairs(i-1,dp);
-        int right = stairs(i-2,dp);
-        dp[i]=left+right;
-
         return dp[i];
     }
 public:

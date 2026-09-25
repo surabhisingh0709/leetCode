@@ -19,8 +19,26 @@ public:
 public:
     int climbStairs(int n) {
 
-        vector<int>dp(n+1,-1);
+        //vector<int>dp(n+1,-1);
 
-        return stairs(n,dp);       
+        //return stairs(n,dp);  
+
+        //optimized
+
+        if(n<=1)return 1;
+        
+
+        int prev1=1;
+        int prev2=1;
+        int cur;
+
+
+        for(int i =2 ; i<=n ; i++)
+        {
+            cur=prev1+prev2;
+            prev2=prev1;
+            prev1=cur;
+        }  
+        return cur;   
     }
 };

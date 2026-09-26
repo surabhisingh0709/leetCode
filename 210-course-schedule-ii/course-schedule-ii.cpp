@@ -39,9 +39,9 @@ public:
             }
             ans.push_back(v);
         }
-        if(ans.size() != numCourses)return {};
+        if(ans.size() == numCourses)return ans;
 
-        return ans;
+        return {};
         
     }
 };

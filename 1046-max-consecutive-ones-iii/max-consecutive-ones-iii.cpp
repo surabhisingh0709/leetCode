@@ -8,7 +8,7 @@ public:
         int n = nums.size();
         int zero=0;
 
-        while(r<n)
+       /* while(r<n)
         {
             if(nums[r]==0) zero++;
             if(zero>k)
@@ -19,6 +19,22 @@ public:
             }
 
             
+            ans = max(ans,r-l+1);
+            r++;
+
+        }
+        return ans;*/
+        int z=0;
+
+        while(r<n)
+        {
+            if(nums[r]==0)z++;
+
+            while(z>k)
+            {
+                if(nums[l]==0)z--;
+                l++;           
+            }
             ans = max(ans,r-l+1);
             r++;
 
